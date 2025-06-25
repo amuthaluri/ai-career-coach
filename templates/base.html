@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Career Coach</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="header">
+        <h1>AI Career Coach</h1>
+        <p>Your friendly guide to landing your dream job!</p>
+    </div>
+    <div class="container" style="max-width: 700px; margin: 2rem auto;">
+        {% block content %}{% endblock %}
+    </div>
+<div style="position:fixed;top:10vh;left:-100px;width:300px;height:300px;z-index:0;pointer-events:none;opacity:0.2;background:radial-gradient(circle,#a1c4fd 0,#fff 80%);border-radius:50%;"></div>
+<div style="position:fixed;bottom:5vh;right:-120px;width:250px;height:250px;z-index:0;pointer-events:none;opacity:0.18;background:radial-gradient(circle,#fda085 0,#fff 80%);border-radius:50%;"></div>
+</body>
+</html>

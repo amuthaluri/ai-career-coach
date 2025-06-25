@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+    <div class="quote">
+        <strong>Motivation:</strong> "{{ quote }}"
+    </div>
+    <form method="POST" class="mb-3">
+        <label for="user_input"><strong>Ask me anything about your career, interviews, or coding:</strong></label>
+        <div style="display: flex; gap: 1rem; margin-top: 0.5rem;">
+            <input type="text" name="user_input" id="user_input" class="form-control" style="flex:1;" placeholder="e.g. How do I prepare for a Python interview?" required>
+            <button type="submit" class="btn">Ask</button>
+        </div>
+    </form>
+    {% if chat %}
+        <div>
+            {% for entry in chat %}
+                <div class="chat-bubble">{{ entry }}</div>
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>
+<div class="card">
+    <h3>Daily Coding Challenge <span>💡</span></h3>
+    <p><strong>{{ challenge.title }}</strong></p>
+    <p>{{ challenge.desc }}</p>
+</div>
+<div class="card">
+    <h3>Top Resources <span>🚀</span></h3>
+    <a class="resource-link" href="https://leetcode.com/" target="_blank">LeetCode (Coding Practice)</a>
+    <a class="resource-link" href="https://www.interviewbit.com/" target="_blank">InterviewBit (Interview Prep)</a>
+    <a class="resource-link" href="https://www.linkedin.com/learning/" target="_blank">LinkedIn Learning</a>
+    <a class="resource-link" href="https://roadmap.sh/" target="_blank">Developer Roadmaps</a>
+    <a class="resource-link" href="https://www.freecodecamp.org/" target="_blank">freeCodeCamp</a>
+</div>
+{% endblock %}
